@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>User: {{ user.name }}</h2>
+
+<p>Average Severity: {{ avg }}</p>
+<p>Level: <strong>{{ level }}</strong></p>
+
+<h3 class="mt-4">History</h3>
+
+<table class="table table-bordered">
+    <tr><th>Date</th><th>Prediction</th><th>Severity</th></tr>
+    {% for r in results %}
+    <tr>
+        <td>{{ r.created_at }}</td>
+        <td>{{ r.predicted_label }}</td>
+        <td>{{ r.severity_score }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
