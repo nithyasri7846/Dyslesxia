@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Result</h2>
+
+<p><strong>Prediction:</strong> {{ result.predicted_label }}</p>
+
+<p>Probability (No Dyslexia): {{ result.prob_no }}</p>
+<p>Probability (Mild): {{ result.prob_mild }}</p>
+<p>Probability (High): {{ result.prob_high }}</p>
+
+<h4 class="mt-4">Grad-CAM Heatmap</h4>
+<img src="/static/{{ result.gradcam_path }}" class="img-fluid">
+
+<a href="/user/{{ result.user.name }}" class="btn btn-link mt-4">View User History</a>
+
+{% endblock %}
