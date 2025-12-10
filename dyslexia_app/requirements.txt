@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+tensorflow
+efficientnet
+opencv-python
+numpy
+pandas
+matplotlib
+chart.js
